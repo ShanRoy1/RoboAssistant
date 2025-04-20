@@ -1,0 +1,64 @@
+{
+    "hardware": {
+        "robotic_arm": {
+            "port": "COM3",
+            "baudrate": 115200,
+            "enabled": true
+        },
+        "depth_camera": {
+            "enabled": true
+        },
+        "lidar": {
+            "port": "COM4",
+            "enabled": true
+        },
+        "coral_accelerator": {
+            "enabled": true
+        }
+    },
+    "application": {
+        "default_mode": "assistant",
+        "log_level": "INFO",
+        "startup_sequence": [
+            "robotic_arm",
+            "depth_camera",
+            "lidar",
+            "neural_engine",
+            "voice_assistant"
+        ]
+    },
+    "voice_assistant": {
+        "wake_phrase": "hey jarvis",
+        "voice_rate": 180,
+        "voice_volume": 0.9,
+        "language": "en-US"
+    },
+    "neural_engine": {
+        "models": {
+            "object_detection": "models/ssd_mobilenet_v2_coco_quant_postprocess_edgetpu.tflite",
+            "segmentation": "models/deeplabv3_mnv2_pascal_quant_edgetpu.tflite"
+        },
+        "labels": {
+            "object_detection": "models/coco_labels.txt",
+            "segmentation": "models/pascal_voc_segmentation_labels.txt"
+        },
+        "detection_threshold": 0.5
+    },
+    "scanning": {
+        "lidar_angular_resolution": 1.0,
+        "lidar_max_distance": 12.0,
+        "depth_min": 0.3,
+        "depth_max": 10.0
+    },
+    "path_planning": {
+        "obstacle_threshold": 0.5,
+        "path_width": 0.6,
+        "safety_margin": 0.2
+    },
+    "ui": {
+        "display_depth_overlay": true,
+        "display_lidar_map": true,
+        "display_detected_objects": true,
+        "theme": "dark"
+    }
+} 
