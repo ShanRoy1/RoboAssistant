@@ -24,8 +24,8 @@ A comprehensive software system for controlling the Waveshare Robotic Arm (RoArm
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/RoboAssistant.git
-   cd RoboAssistant
+git clone https://github.com/Shanroy1/RoboAssistant.git
+cd RoboAssistant
    ```
 
 2. Install dependencies:
